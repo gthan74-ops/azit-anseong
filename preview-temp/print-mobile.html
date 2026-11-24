@@ -1,0 +1,19 @@
+<!doctype html><html><head><meta charset="utf-8">
+<title>print-mobile</title>
+<style>
+  @page{size:390px 844px;margin:0}
+  html,body{margin:0;padding:0;background:#faf9f6}
+  iframe{border:0;display:block;width:390px;height:15000px}
+</style></head>
+<body><iframe id="f" src="/azit-anseong/?v=pj"></iframe>
+<script>
+addEventListener('load',function(){
+  var f=document.getElementById('f');
+  try{
+    var d=f.contentDocument;
+    d.querySelectorAll('img[loading="lazy"]').forEach(function(i){i.loading='eager';});
+    d.head.insertAdjacentHTML('beforeend','<style>.site-header,.progress,.skip,.ticker-track{animation:none!important}.ticker-track{transform:none!important}html{scroll-behavior:auto!important}</style>');
+    f.style.height=d.documentElement.scrollHeight+'px';
+  }catch(e){}
+});
+</script></body></html>
