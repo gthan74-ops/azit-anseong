@@ -802,7 +802,6 @@ html.js .vg-col .shot:nth-child(3),html.js .proof-photos .shot:nth-child(3){tran
   .film-feature{grid-template-columns:1fr;gap:20px}
   .film-feature .film-copy{display:block}
   .together-inner{grid-template-columns:1fr;gap:44px}
-  .together h2 br{display:none}
 }
 
 @media (max-width:900px){
