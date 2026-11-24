@@ -20,7 +20,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500&display=swap">
 <link rel="preload" as="image" href="./assets/logo-mark.png" type="image/png">
 <link rel="preload" as="image" href="./assets/concept-studio.webp" type="image/webp">
-<link rel="stylesheet" href="./style.css?v=20261124n">
+<link rel="stylesheet" href="./style.css?v=20261124o">
 </head>
 <body class="page">
 <a class="skip" href="#main">본문으로 이동</a>
@@ -67,7 +67,7 @@
         </h1>
         <p class="hero-lead">좋은 자원에 이야기와 실행을 더합니다.<br class="only-wide"> 안성의 재료와 사람을 발견하고, 선명한 이야기로 만들고,<br class="only-wide"> 지역의 파트너와 함께 시장에 연결합니다.</p>
         <div class="hero-actions">
-          <a class="link-play" href="#films"><span class="play" aria-hidden="true"></span>회사 소개영상 보기</a>
+          <a class="link-play" href="#company-film"><span class="play" aria-hidden="true"></span>회사 소개영상 보기</a>
           <a class="link-arrow" href="#work">하는 일 보기 <span aria-hidden="true">↗</span></a>
         </div>
         <ul class="hero-index" aria-label="아지트 안성의 하는 일">
@@ -83,7 +83,6 @@
             <source srcset="./assets/concept-studio.webp" type="image/webp">
             <img src="./assets/concept-studio.jpg" width="1600" height="900" alt="노트북과 카메라가 놓인 아지트 안성의 로컬 스튜디오 작업 데스크 콘셉트" fetchpriority="high" decoding="async">
           </picture>
-          <span class="hero-seal"><img src="./assets/logo-seal.png" width="640" height="640" alt="아지트 안성 로고" decoding="async"></span>
         </div>
         <figcaption>
           <span>아지트 안성 — 로컬 스튜디오 콘셉트 비주얼</span>
@@ -92,19 +91,7 @@
       </figure>
     </div>
 
-    <div class="hero-foot">
-      <p class="hero-foot-label">첫 프로젝트</p>
-      <p class="hero-foot-title">황금배소금 <span>— 안성 배와 신안 천일염으로 만든 요리 소금</span></p>
-      <a class="link-arrow" href="#product">제품 보기 <span aria-hidden="true">↗</span></a>
-    </div>
   </section>
-
-  <!-- ═══ TICKER ═══ -->
-  <div class="ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>안성 배 <i>×</i> 신안 천일염</span><span>표준 공정 여섯 단계</span><span>수분 3% 이하</span><span>70℃ 효소 추출</span><span>80℃ 로스팅</span><span>상표출원 제40-2026-0243755호</span><span>안성 배 <i>×</i> 신안 천일염</span><span>표준 공정 여섯 단계</span><span>수분 3% 이하</span><span>70℃ 효소 추출</span><span>80℃ 로스팅</span><span>상표출원 제40-2026-0243755호</span>
-    </div>
-  </div>
 
   <!-- ═══ 01 ABOUT ═══ -->
   <section class="section about" id="about">
@@ -122,6 +109,26 @@
             <p>한 번의 홍보에서 끝나지 않도록 작은 실행과 고객의 반응을 쌓아, 지역 안에서 지속할 수 있는 사업으로 발전시킵니다. 황금배소금은 그 방식으로 만든 첫 제품 프로젝트입니다.</p>
           </div>
         </div>
+
+        <figure class="company-film" id="company-film">
+          <div class="film-media">
+            <video controls playsinline preload="none" poster="./assets/company-poster.jpg" aria-label="아지트 안성 회사 소개영상">
+              <source src="./assets/company.mp4" type="video/mp4">
+              <track kind="subtitles" src="./assets/company.vtt" srclang="ko" label="한국어">
+              브라우저가 영상을 지원하지 않습니다. <a href="./assets/company.mp4">영상 내려받기</a>
+            </video>
+          </div>
+          <figcaption class="company-film-copy">
+            <div>
+              <p class="film-no">Film 01 · 2:03 · 회사 소개영상</p>
+              <h3>아지트 안성이 만들어갈 연결</h3>
+            </div>
+            <div>
+              <p>브랜딩, AI 마케팅, 로컬 파트너십으로 이어지는 회사의 비전과 사업 방향을 영상으로 소개합니다.</p>
+              <a class="inline-link" href="./assets/company.mp4" download>영상 내려받기 <span aria-hidden="true">↗</span></a>
+            </div>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -184,6 +191,21 @@
       </div>
     </div>
   </section>
+
+  <!-- ═══ PROJECT 01 · 황금배소금 시작 ═══ -->
+  <section class="project-lead" id="project" aria-label="첫 제품 프로젝트 황금배소금">
+    <div class="project-lead-inner">
+      <p class="project-lead-label">프로젝트 · 첫 제품</p>
+      <p class="project-lead-title">황금배소금 <span>— 안성 배와 신안 천일염으로 만든 요리 소금</span></p>
+      <a class="link-arrow" href="#product">제품 보기 <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>안성 배 <i>×</i> 신안 천일염</span><span>표준 공정 여섯 단계</span><span>수분 3% 이하</span><span>70℃ 효소 추출</span><span>80℃ 로스팅</span><span>상표출원 제40-2026-0243755호</span><span>안성 배 <i>×</i> 신안 천일염</span><span>표준 공정 여섯 단계</span><span>수분 3% 이하</span><span>70℃ 효소 추출</span><span>80℃ 로스팅</span><span>상표출원 제40-2026-0243755호</span>
+    </div>
+  </div>
 
   <!-- ═══ 03 PRODUCT ═══ -->
   <section class="product" id="product">
@@ -518,29 +540,9 @@
       </div>
       <div class="rail-body">
         <div class="sec-head">
-          <h2 class="h2">이야기를 영상으로.</h2>
-          <p class="sec-sub">회사의 방향, 제품의 배경, 그리고 식탁에서의 쓰임을 담았습니다.</p>
+          <h2 class="h2">황금배소금의 이야기를<br>영상으로.</h2>
+          <p class="sec-sub">제품의 시작과 식탁에서의 쓰임을 두 편으로 담았습니다. 회사 소개영상은 위 ‘아지트 안성’ 섹션에서 보실 수 있습니다.</p>
         </div>
-
-        <article class="film-feature">
-          <div class="film-media">
-            <video controls playsinline preload="none" poster="./assets/company-poster.jpg" aria-label="아지트 안성 회사 소개영상">
-              <source src="./assets/company.mp4" type="video/mp4">
-              <track kind="subtitles" src="./assets/company.vtt" srclang="ko" label="한국어">
-              브라우저가 영상을 지원하지 않습니다. <a href="./assets/company.mp4">영상 내려받기</a>
-            </video>
-          </div>
-          <div class="film-copy">
-            <div>
-              <p class="film-no">Film 01 · 2:03</p>
-              <h3>아지트 안성이 만들어갈 연결</h3>
-            </div>
-            <div class="film-desc">
-              <p>브랜딩, AI 마케팅, 로컬 파트너십으로 이어지는 회사의 비전과 사업 방향을 소개합니다.</p>
-              <a class="inline-link" href="./assets/company.mp4" download>영상 내려받기 <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </article>
 
         <div class="film-grid">
           <article class="film-card">
@@ -614,6 +616,6 @@
   </div>
 </footer>
 
-<script src="./app.js?v=20261124n"></script>
+<script src="./app.js?v=20261124o"></script>
 </body>
 </html>

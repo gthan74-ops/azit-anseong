@@ -75,8 +75,8 @@
 
   /* ── reveal on scroll ──────────────────────────────── */
   var selector = [
-    '.hero-copy', '.hero-figure', '.hero-foot',
-    '.rail-label', '.sec-head', '.about-cols',
+    '.hero-copy', '.hero-figure', '.project-lead-inner',
+    '.rail-label', '.sec-head', '.about-cols', '.company-film',
     '.svc li', '.flow',
     '.product-head', '.product-side', '.bleed', '.facts', '.pstats',
     '.detail-copy', '.detail-grid > h2',
@@ -86,7 +86,7 @@
     '.stats', '.proof-detail', '.quotes', '.proof-photos',
     '.tl li',
     '.team-main > *', '.ip',
-    '.film-feature', '.film-card',
+    '.film-card',
     '.together-inner > *'
   ].join(',');
 
