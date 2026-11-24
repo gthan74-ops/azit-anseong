@@ -2,91 +2,116 @@
   'use strict';
 
   var doc = document;
-  doc.documentElement.classList.add('js');
+  var root = doc.documentElement;
+  root.classList.add('js');
 
-  /* sticky header state */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ── header + reading progress ─────────────────────── */
   var header = doc.getElementById('site-header');
-  var onScroll = function () {
-    if (!header) return;
-    header.classList.toggle('is-stuck', window.scrollY > 8);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  var progress = doc.querySelector('.progress i');
 
-  /* mobile menu */
+  var updateChrome = function () {
+    var y = window.scrollY || window.pageYOffset;
+    if (header) header.classList.toggle('is-stuck', y > 6);
+    if (progress) {
+      var max = doc.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? Math.min(1, y / max) * 100 : 0) + '%';
+    }
+  };
+  updateChrome();
+  window.addEventListener('scroll', updateChrome, { passive: true });
+  window.addEventListener('resize', updateChrome);
+
+  /* ── mobile menu ───────────────────────────────────── */
   var menuButton = doc.querySelector('.menu');
   var nav = doc.getElementById('navigation');
+
   if (menuButton && nav) {
     var setOpen = function (open) {
       menuButton.setAttribute('aria-expanded', open ? 'true' : 'false');
       nav.classList.toggle('open', open);
+      doc.body.classList.toggle('nav-open', open);
+      var label = menuButton.querySelector('.menu-txt');
+      if (label) label.textContent = open ? '닫기' : '메뉴';
+      if (open) {
+        var first = nav.querySelector('a');
+        if (first) first.focus({ preventScroll: true });
+      }
     };
+
     menuButton.addEventListener('click', function () {
       setOpen(menuButton.getAttribute('aria-expanded') !== 'true');
     });
+
     nav.addEventListener('click', function (e) {
       if (e.target.closest('a')) setOpen(false);
     });
+
     doc.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+      if (e.key === 'Escape' && doc.body.classList.contains('nav-open')) {
         setOpen(false);
-        menuButton.focus();
+        menuButton.focus({ preventScroll: true });
       }
     });
+
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 820) setOpen(false);
+      if (window.innerWidth > 900) setOpen(false);
     });
   }
 
-  /* scroll reveal */
-  var targets = Array.prototype.slice.call(doc.querySelectorAll(
-    '.hero-copy, .hero-visual, .section-head, .about-copy, .approach-card, .service-card, .flow, ' +
-    '.product-head, .product-hero, .product-facts, .detail-copy, .lineup-card, .usage-head, .usage-card, .process-head, .steps li, ' +
-    '.proof-card, .voices, .proof-photos figure, .timeline li, .team-list li, .ip-card, ' +
-    '.feature-film, .film-card, .cta-panel'
-  ));
+  /* ── reveal on scroll ──────────────────────────────── */
+  var selector = [
+    '.hero-copy', '.hero-figure', '.hero-foot',
+    '.rail-label', '.sec-head', '.about-cols',
+    '.svc li', '.flow',
+    '.product-head', '.product-aside', '.bleed', '.facts',
+    '.detail-copy', '.detail-grid > h2',
+    '.shot', '.vessels-note',
+    '.usage-head',
+    '.steps li',
+    '.stats', '.proof-detail', '.quotes', '.proof-photos',
+    '.tl li',
+    '.team-main > *', '.ip',
+    '.film-feature', '.film-card',
+    '.together-inner > *'
+  ].join(',');
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) {
+  var targets = Array.prototype.slice.call(doc.querySelectorAll(selector));
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
     targets.forEach(function (el) { el.classList.add('is-in'); });
   } else {
-    targets.forEach(function (el, i) {
-      el.classList.add('reveal');
-      el.style.transitionDelay = Math.min(i % 4, 3) * 60 + 'ms';
-    });
+    targets.forEach(function (el) { el.classList.add('reveal'); });
 
-    var pending = targets.slice();
-    var revealNow = function () {
-      if (!pending.length) return;
-      var limit = window.innerHeight * 0.94;
-      pending = pending.filter(function (el) {
-        if (el.getBoundingClientRect().top < limit) {
-          el.classList.add('is-in');
-          return false;
+    var show = function (el) { el.classList.add('is-in'); };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          show(entry.target);
+          observer.unobserve(entry.target);
         }
-        return true;
       });
-    };
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
 
-    /* a scroll check, not a one-off observer: elements skipped during a fast
-       flick must still appear, so every frame that matters gets a look */
-    var ticking = false;
-    var request = function () {
-      if (ticking) return;
-      ticking = true;
-      window.requestAnimationFrame(function () {
-        ticking = false;
-        revealNow();
+    targets.forEach(function (el) { observer.observe(el); });
+
+    /* safety net: anything already on screen or skipped by a fast flick */
+    var sweep = function () {
+      var limit = window.innerHeight * 0.96;
+      targets.forEach(function (el) {
+        if (!el.classList.contains('is-in') && el.getBoundingClientRect().top < limit) show(el);
       });
     };
-    window.addEventListener('scroll', request, { passive: true });
-    window.addEventListener('resize', request);
-    window.addEventListener('load', request);
-    request();
-    setTimeout(revealNow, 120);
+    window.addEventListener('load', sweep);
+    window.addEventListener('scroll', function () {
+      if (window.requestAnimationFrame) window.requestAnimationFrame(sweep);
+    }, { passive: true });
+    setTimeout(sweep, 300);
   }
 
-  /* only one film plays at a time */
+  /* ── only one film plays at a time ─────────────────── */
   var videos = Array.prototype.slice.call(doc.querySelectorAll('video'));
   videos.forEach(function (video) {
     video.addEventListener('play', function () {
