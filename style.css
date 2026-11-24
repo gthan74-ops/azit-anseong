@@ -318,6 +318,7 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
   column-gap:clamp(24px,3.6vw,72px);
   max-width:var(--max);margin-inline:auto;
 }
+.rail-body{min-width:0}
 .rail-label{position:sticky;top:96px;align-self:start;padding-top:6px}
 .rail-note{margin-top:14px;font-size:11.5px;line-height:1.75;color:var(--muted);letter-spacing:0}
 
@@ -785,7 +786,7 @@ html.js .vg-col .shot:nth-child(3),html.js .proof-photos .shot:nth-child(3){tran
 
 @media (max-width:980px){
   .section{padding-top:clamp(56px,9vw,88px)}
-  .rail{grid-template-columns:1fr;row-gap:22px}
+  .rail{grid-template-columns:minmax(0,1fr);row-gap:22px}
   .rail-label{position:static;display:flex;align-items:baseline;gap:16px;padding-top:0}
   .rail-note{display:none}
   .sec-head{grid-template-columns:1fr;align-items:start;gap:16px}
@@ -888,7 +889,7 @@ html.js .vg-col .shot:nth-child(3),html.js .proof-photos .shot:nth-child(3){tran
   .vg-col--side .shot figcaption span{display:block;margin-top:2px}
   .usage-grid{grid-template-columns:1fr}
   .steps{
-    display:flex;grid-template-columns:none;overflow-x:auto;
+    display:flex;grid-template-columns:none;overflow-x:auto;width:100%;
     scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
     margin-inline:calc(var(--pad) * -1);padding-inline:var(--pad);
     border-top:1px solid var(--ink);scrollbar-width:none;
