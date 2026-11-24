@@ -666,14 +666,14 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 
 /* ── films ────────────────────────────────────────────── */
 
-.film-feature{display:block}
+.film-feature{
+  display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,.75fr);
+  gap:clamp(20px,3.4vw,48px);align-items:end;
+}
 .film-media{background:#0b0b0b;overflow:hidden}
 .film-media video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#0b0b0b}
-.film-feature .film-copy{
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  gap:clamp(18px,4vw,64px);align-items:start;
-  border-top:1px solid var(--line);margin-top:14px;padding-top:20px;
-}
+.film-feature .film-copy{display:block}
+.film-feature .film-copy .film-desc p{margin-top:14px}
 .film-copy h3{font-size:clamp(1.2rem,1.75vw,1.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.42}
 .film-feature .film-copy h3{font-size:clamp(1.3rem,2vw,1.7rem)}
 .film-copy p:not(.film-no){margin-top:12px;font-size:13.5px;line-height:1.8;color:var(--muted);max-width:36ch}
@@ -799,7 +799,8 @@ html.js .vg-col .shot:nth-child(3),html.js .proof-photos .shot:nth-child(3){tran
   .vg-col--side{margin-top:44px}
   .usage-grid{gap:18px}
   .team-grid{grid-template-columns:1fr;gap:44px}
-  .film-feature .film-copy{grid-template-columns:1fr;gap:14px}
+  .film-feature{grid-template-columns:1fr;gap:20px}
+  .film-feature .film-copy{display:block}
   .together-inner{grid-template-columns:1fr;gap:44px}
   .together h2 br{display:none}
 }
