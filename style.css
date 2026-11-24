@@ -251,7 +251,7 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 }
 .hero-img{
   overflow:hidden;background:#e8e5dd;
-  height:clamp(420px,68vh,720px);
+  height:clamp(400px,60vh,640px);
 }
 .hero-img img{
   width:100%;height:100%;object-fit:cover;object-position:57% 50%;
@@ -310,7 +310,6 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 /* ── section frame ────────────────────────────────────── */
 
 .section{padding:clamp(64px,8vw,132px) var(--pad)}
-.section + .section{padding-top:0}
 
 .rail{
   display:grid;
