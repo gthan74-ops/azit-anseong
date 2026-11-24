@@ -469,7 +469,8 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 .detail-copy p:not(.lead){font-size:14.5px;line-height:1.88;color:#3c3a35;max-width:44ch}
 .detail-copy .lead + p{margin-top:1.3em}
 
-.more{margin-top:clamp(26px,3vw,40px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.detail-head .more{margin-top:clamp(30px,4vw,54px);max-width:430px}
+.more{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .more summary{
   display:flex;justify-content:space-between;align-items:center;gap:16px;
   padding:16px 0;cursor:pointer;list-style:none;
