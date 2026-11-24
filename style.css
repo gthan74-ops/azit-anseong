@@ -900,10 +900,10 @@ html.js .vg-col .shot:nth-child(3){transition-delay:.16s}
   .hero-seal{width:clamp(86px,20vw,120px)}
   .hero-figure figcaption{padding-right:0}
   .hero-actions{margin-top:0;padding-top:28px}
-  .hero-foot{grid-template-columns:1fr auto;gap:10px 16px;align-items:baseline}
-  .hero-foot-label{grid-column:1 / -1}
+  .hero-foot{grid-template-columns:1fr;gap:10px;align-items:baseline}
   .hero-foot-title{font-size:14px}
   .hero-foot-title span{display:block}
+  .hero-foot .link-arrow{justify-self:start;margin-top:6px}
   .hero-meta .label--right{display:none}
 
   .svc > li{grid-template-columns:44px minmax(0,1fr);row-gap:14px}
