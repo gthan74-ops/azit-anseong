@@ -78,7 +78,7 @@
     '.hero-copy', '.hero-figure', '.hero-foot',
     '.rail-label', '.sec-head', '.about-cols',
     '.svc li', '.flow',
-    '.product-head', '.product-aside', '.bleed', '.facts',
+    '.product-head', '.product-side', '.bleed', '.facts', '.pstats',
     '.detail-copy', '.detail-grid > h2',
     '.shot', '.vessels-note',
     '.usage-head',

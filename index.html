@@ -10,14 +10,17 @@
 <meta property="og:description" content="안성 배 요리소금 황금배소금. 시식 46명, 구매 의사 96%, 상표출원 완료. 아지트 안성의 첫 제품 프로젝트.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="./assets/lineup.jpg">
-<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="./assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="./assets/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Noto+Serif+KR:wght@400;500&display=swap">
-<link rel="preload" as="image" href="./assets/jar-spoon.webp" type="image/webp">
-<link rel="stylesheet" href="./style.css?v=20261124m">
+<link rel="preload" as="image" href="./assets/logo-mark.png" type="image/png">
+<link rel="preload" as="image" href="./assets/concept-studio.webp" type="image/webp">
+<link rel="stylesheet" href="./style.css?v=20261124n">
 </head>
 <body class="page">
 <a class="skip" href="#main">본문으로 이동</a>
@@ -26,8 +29,11 @@
 <header class="site-header" id="site-header">
   <div class="nav-inner">
     <a class="brand" href="#home" aria-label="아지트 안성 홈">
-      <span class="brand-ko">아지트 안성</span>
-      <span class="brand-en">AZIT ANSEONG</span>
+      <img class="brand-mark" src="./assets/logo-mark.png" width="360" height="282" alt="" aria-hidden="true" decoding="async" fetchpriority="high">
+      <span class="brand-text">
+        <span class="brand-ko">아지트 안성</span>
+        <span class="brand-en">AZIT ANSEONG</span>
+      </span>
     </a>
     <button class="menu" type="button" aria-expanded="false" aria-controls="navigation">
       <span class="menu-ico" aria-hidden="true"><i></i><i></i></span>
@@ -56,13 +62,13 @@
     <div class="hero-grid">
       <div class="hero-copy">
         <h1 class="hero-title">
-          <span class="l">지역의 가능성을</span>
-          <span class="l">브랜드로<span class="dot">.</span></span>
+          <span class="l">지역의 가능성이</span>
+          <span class="l">브랜드가 되는 곳<span class="dot">.</span></span>
         </h1>
-        <p class="hero-lead">안성의 재료와 사람을 발견하고, 선명한 이야기로 만들고,<br class="only-wide"> 지역의 파트너와 함께 시장에 연결합니다.</p>
+        <p class="hero-lead">좋은 자원에 이야기와 실행을 더합니다.<br class="only-wide"> 안성의 재료와 사람을 발견하고, 선명한 이야기로 만들고, 지역의 파트너와 함께 시장에 연결합니다.</p>
         <div class="hero-actions">
-          <a class="link-arrow" href="#product">황금배소금 보기 <span aria-hidden="true">↗</span></a>
-          <a class="link-play" href="#films"><span class="play" aria-hidden="true"></span>회사 소개영상</a>
+          <a class="link-play" href="#films"><span class="play" aria-hidden="true"></span>회사 소개영상 보기</a>
+          <a class="link-arrow" href="#work">하는 일 보기 <span aria-hidden="true">↗</span></a>
         </div>
         <ul class="hero-index" aria-label="아지트 안성의 하는 일">
           <li><b>01</b> 브랜드 콘텐츠</li>
@@ -74,24 +80,22 @@
       <figure class="hero-figure">
         <div class="hero-img">
           <picture>
-            <source srcset="./assets/jar-spoon.webp" type="image/webp">
-            <img src="./assets/jar-spoon.jpg" width="1600" height="1200" alt="황금배소금을 담은 유리병과 나무 스푼" fetchpriority="high" decoding="async">
+            <source srcset="./assets/concept-studio.webp" type="image/webp">
+            <img src="./assets/concept-studio.jpg" width="1600" height="900" alt="노트북과 카메라가 놓인 아지트 안성의 로컬 스튜디오 작업 데스크 콘셉트" fetchpriority="high" decoding="async">
           </picture>
+          <span class="hero-seal"><img src="./assets/logo-seal.png" width="640" height="640" alt="아지트 안성 로고" decoding="async"></span>
         </div>
         <figcaption>
-          <span>황금배소금 — 유리병과 나무 스푼</span>
-          <span>2026.11 · 실물 시제품</span>
+          <span>아지트 안성 — 로컬 스튜디오 콘셉트 비주얼</span>
+          <span>2026 · AI 활용 콘셉트</span>
         </figcaption>
       </figure>
     </div>
 
     <div class="hero-foot">
-      <dl class="hero-stats">
-        <div><dt>시식 참여</dt><dd>46<small>명</small></dd></div>
-        <div><dt>설문 응답</dt><dd>25<small>명</small></dd></div>
-        <div><dt>구매 의사</dt><dd>96<small>%</small></dd></div>
-      </dl>
-      <p class="hero-stats-note">1차 6명 · 2차 40명 시식<br>2차 시식회 설문 25명 기준</p>
+      <p class="hero-foot-label">첫 프로젝트</p>
+      <p class="hero-foot-title">황금배소금 <span>— 안성 배와 신안 천일염으로 만든 요리 소금</span></p>
+      <a class="link-arrow" href="#product">제품 보기 <span aria-hidden="true">↗</span></a>
     </div>
   </section>
 
@@ -192,8 +196,18 @@
         <p class="product-lead">안성 배와 신안 천일염을 결합한 요리 소금. 지역의 재료를 일상의 식탁에 연결하는 아지트 안성의 첫 제품입니다.</p>
         <p class="status"><i aria-hidden="true"></i>상표출원 완료 · 출시 준비 중</p>
       </div>
-      <div class="product-aside">
-        <p>실제 제작한 시제품은 유리병, 코르크 미니 사각병, 스틱 포장 2종, 도자기 종지로 구성했습니다. 용량과 가격, 최종 포장은 제조 준비와 원가 산정에 따라 확정합니다.</p>
+      <div class="product-side">
+        <figure class="product-jar">
+          <picture>
+            <source srcset="./assets/jar-spoon.webp" type="image/webp">
+            <img src="./assets/jar-spoon.jpg" width="1600" height="1200" loading="lazy" decoding="async" alt="황금배소금을 담은 유리병과 나무 스푼">
+          </picture>
+          <figcaption>
+            <span>유리병과 나무 스푼</span>
+            <span>2026.11 · 실물 시제품</span>
+          </figcaption>
+        </figure>
+        <p class="product-aside">실제 제작한 시제품은 유리병, 코르크 미니 사각병, 스틱 포장 2종, 도자기 종지로 구성했습니다. 용량과 가격, 최종 포장은 제조 준비와 원가 산정에 따라 확정합니다.</p>
       </div>
     </div>
 
@@ -225,6 +239,18 @@
         <p>70℃ 효소 추출 · 80℃ 로스팅</p>
       </div>
     </dl>
+
+    <div class="pstats">
+      <dl class="pstats-nums" aria-label="시식 검증 수치">
+        <div><dt>시식 참여</dt><dd>46<small>명</small></dd></div>
+        <div><dt>설문 응답</dt><dd>25<small>명</small></dd></div>
+        <div><dt>구매 의사</dt><dd>96<small>%</small></dd></div>
+      </dl>
+      <div class="pstats-note">
+        <p>1차 6명 · 2차 40명 시식, 2차 시식회 설문 25명 기준.</p>
+        <a class="inline-link inline-link--light" href="#proof">시식 검증 보기 <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
   </section>
 
   <!-- ═══ 03b DETAIL ═══ -->
@@ -570,8 +596,10 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <a class="brand brand--footer" href="#home" aria-label="맨 위로">
-      <span class="brand-ko">아지트 안성</span>
-      <span class="brand-en">AZIT ANSEONG</span>
+      <span class="brand-text">
+        <span class="brand-ko">아지트 안성</span>
+        <span class="brand-en">AZIT ANSEONG</span>
+      </span>
     </a>
     <div class="footer-meta">
       <p>아지트 안성 · 대표 한규태</p>
@@ -587,6 +615,6 @@
   </div>
 </footer>
 
-<script src="./app.js?v=20261124m"></script>
+<script src="./app.js?v=20261124n"></script>
 </body>
 </html>
