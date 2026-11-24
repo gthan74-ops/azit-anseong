@@ -432,7 +432,7 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 }
 .bleed picture{display:block;overflow:hidden}
 .bleed img{
-  width:100%;height:clamp(360px,64vh,720px);object-fit:cover;object-position:50% 55%;
+  width:100%;height:clamp(360px,48vw,690px);object-fit:cover;object-position:50% 58%;
   transition:transform 1.2s var(--ease);
 }
 .bleed:hover img{transform:scale(1.015)}
