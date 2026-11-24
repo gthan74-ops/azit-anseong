@@ -36,6 +36,8 @@ body{
   line-height:1.75;
   font-weight:400;
   letter-spacing:-.012em;
+  word-break:keep-all;
+  overflow-wrap:break-word;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   overflow-x:hidden;
