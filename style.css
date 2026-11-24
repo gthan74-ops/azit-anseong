@@ -346,24 +346,24 @@ body.nav-open .menu-ico i:last-child{top:5px;transform:rotate(-45deg)}
 /* ── services ─────────────────────────────────────────── */
 
 .svc{border-top:1px solid var(--ink)}
-.svc li{
+.svc > li{
   position:relative;
   display:grid;grid-template-columns:64px minmax(0,1.2fr) minmax(0,.72fr);
   gap:clamp(14px,2.6vw,48px);
   padding:clamp(26px,3.2vw,44px) 0;
   border-bottom:1px solid var(--line);
 }
-.svc li::before{
+.svc > li::before{
   content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--amber);
   transform:scaleX(0);transform-origin:left;
   transition:transform .7s var(--ease);
 }
-.svc li:hover::before{transform:scaleX(1)}
+.svc > li:hover::before{transform:scaleX(1)}
 .svc-no{
   font-family:var(--serif);font-size:15px;color:var(--amber);line-height:1.6;
   transition:transform .5s var(--ease);
 }
-.svc li:hover .svc-no{transform:translateY(-2px)}
+.svc > li:hover .svc-no{transform:translateY(-2px)}
 .svc-main h3{
   font-size:clamp(1.15rem,1.75vw,1.5rem);font-weight:600;letter-spacing:-.03em;line-height:1.3;
 }
@@ -841,7 +841,7 @@ html.js .vg-col .shot:nth-child(3),html.js .proof-photos .shot:nth-child(3){tran
   .hero-stats-note{text-align:left}
   .hero-meta .label--right{display:none}
 
-  .svc li{grid-template-columns:44px minmax(0,1fr);row-gap:14px}
+  .svc > li{grid-template-columns:44px minmax(0,1fr);row-gap:14px}
   .svc-list{grid-column:2}
   .product-top{grid-template-columns:1fr;gap:26px}
   .product-aside p{max-width:48ch}
