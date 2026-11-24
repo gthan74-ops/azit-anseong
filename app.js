@@ -86,7 +86,7 @@
     '.stats', '.proof-detail', '.quotes', '.proof-photos',
     '.tl li',
     '.team-main > *', '.ip',
-    '.film-card',
+    '.film-wide',
     '.together-inner > *'
   ].join(',');
 
