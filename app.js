@@ -11,9 +11,22 @@
   var header = doc.getElementById('site-header');
   var progress = doc.querySelector('.progress i');
 
+  var lastY = window.scrollY || window.pageYOffset;
+
   var updateChrome = function () {
     var y = window.scrollY || window.pageYOffset;
-    if (header) header.classList.toggle('is-stuck', y > 6);
+    if (header) {
+      header.classList.toggle('is-stuck', y > 6);
+      var menuOpen = doc.body.classList.contains('nav-open');
+      if (!menuOpen) {
+        var goingDown = y > lastY + 3;
+        var goingUp = y < lastY - 3;
+        if (y > 280 && goingDown) header.classList.add('is-hidden');
+        else if (goingUp || y < 120) header.classList.remove('is-hidden');
+      }
+      if (y <= 280) header.classList.remove('is-hidden');
+    }
+    lastY = y;
     if (progress) {
       var max = doc.documentElement.scrollHeight - window.innerHeight;
       progress.style.width = (max > 0 ? Math.min(1, y / max) * 100 : 0) + '%';
