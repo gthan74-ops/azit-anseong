@@ -124,9 +124,33 @@
     setTimeout(sweep, 300);
   }
 
-  /* ── only one film plays at a time ─────────────────── */
+  /* ── films: play overlay, one at a time ────────────── */
   var videos = Array.prototype.slice.call(doc.querySelectorAll('video'));
+
   videos.forEach(function (video) {
+    var media = video.closest('.film-media');
+    if (media && !media.querySelector('.video-play')) {
+      var play = doc.createElement('button');
+      play.type = 'button';
+      play.className = 'video-play';
+      play.setAttribute('aria-label', '영상 재생');
+      play.innerHTML = '<span aria-hidden="true"></span>';
+      play.addEventListener('click', function () {
+        var attempt = video.play();
+        if (attempt && attempt.catch) attempt.catch(function () {});
+      });
+      media.appendChild(play);
+    }
+
+    var sync = function () {
+      if (media) media.classList.toggle('is-playing', !video.paused && !video.ended);
+    };
+    video.addEventListener('play', sync);
+    video.addEventListener('pause', sync);
+    video.addEventListener('ended', sync);
+
+    if (!('playsInline' in video)) video.setAttribute('playsinline', '');
+
     video.addEventListener('play', function () {
       videos.forEach(function (other) {
         if (other !== video && !other.paused) other.pause();
