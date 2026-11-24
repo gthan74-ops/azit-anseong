@@ -284,6 +284,22 @@ nav#navigation a:hover{color:var(--gold)}
 .lineup-card.note p{font-size:.82rem;color:var(--muted)}
 .lineup-card.note a{margin-top:6px;font-size:.82rem;color:var(--gold);border-bottom:1px solid rgba(165,118,31,.35);width:max-content;padding-bottom:2px}
 
+/* ---------- usage ---------- */
+.usage{padding:clamp(60px,7vw,110px) var(--pad) clamp(30px,4vw,60px);background:var(--paper-3)}
+.usage-head{width:min(var(--wrap),100%);margin:0 auto clamp(30px,4vw,48px);max-width:760px}
+.usage-head h2{font-size:clamp(1.95rem,3.8vw,3.2rem);margin:14px 0 18px}
+.usage-head .sub{color:var(--muted);font-size:clamp(.98rem,1.3vw,1.1rem)}
+.usage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:min(var(--wrap),100%);margin:auto}
+.usage-card{position:relative;overflow:hidden;border-radius:var(--r);background:var(--paper-2)}
+.usage-card img{width:100%;aspect-ratio:4/3.4;object-fit:cover;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.usage-card:hover img{transform:scale(1.03)}
+.usage-card::after{content:"";position:absolute;inset:35% 0 0;background:linear-gradient(transparent,rgba(18,14,8,.78))}
+.usage-card figcaption{position:absolute;z-index:1;left:24px;right:24px;bottom:22px;color:#fff}
+.usage-card figcaption small{font-size:.68rem;font-weight:700;letter-spacing:.16em;color:rgba(255,255,255,.72)}
+.usage-card h3{margin:8px 0 6px;font-family:var(--serif);font-size:clamp(1.35rem,2.2vw,1.85rem);color:#fff}
+.usage-card figcaption p{margin:0;font-size:.88rem;color:rgba(255,255,255,.8)}
+.usage-card figcaption span{display:block;margin-top:10px;font-size:.66rem;color:rgba(255,255,255,.55)}
+
 /* ---------- process ---------- */
 .process-band{background:var(--paper-2);padding:clamp(70px,8vw,120px) var(--pad)}
 .process-inner{width:min(var(--wrap),100%);margin:auto}
@@ -456,6 +472,9 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:38px var
   .lineup-grid{grid-template-columns:1fr 1fr}
   .lineup-card.wide{grid-column:span 2}
   .lineup-card.wide img{aspect-ratio:1.55/1}
+  .usage-grid{grid-template-columns:1fr 1fr}
+  .usage-card:last-child{grid-column:span 2}
+  .usage-card:last-child img{aspect-ratio:16/7.6}
   .steps{grid-template-columns:1fr 1fr}
   .proof-cards{grid-template-columns:1fr}
   .voices ul{grid-template-columns:1fr}
@@ -518,6 +537,9 @@ footer{background:var(--paper);border-top:1px solid var(--line);padding:38px var
   .lineup-card.wide{grid-column:span 1}
   .lineup-card.wide img{aspect-ratio:4/3}
   .lineup-card.note{padding:22px}
+  .usage-grid{grid-template-columns:1fr;gap:12px}
+  .usage-card:last-child{grid-column:span 1}
+  .usage-card img,.usage-card:last-child img{aspect-ratio:4/3.2}
   .steps{grid-template-columns:1fr}
   .charts{grid-template-columns:1fr;gap:26px}
   .bars li{grid-template-columns:78px 1fr auto;gap:10px}

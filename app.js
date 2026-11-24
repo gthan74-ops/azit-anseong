@@ -41,7 +41,7 @@
   /* scroll reveal */
   var targets = Array.prototype.slice.call(doc.querySelectorAll(
     '.hero-copy, .hero-visual, .section-head, .about-copy, .approach-card, .service-card, .flow, ' +
-    '.product-head, .product-hero, .product-facts, .detail-copy, .lineup-card, .process-head, .steps li, ' +
+    '.product-head, .product-hero, .product-facts, .detail-copy, .lineup-card, .usage-head, .usage-card, .process-head, .steps li, ' +
     '.proof-card, .voices, .proof-photos figure, .timeline li, .team-list li, .ip-card, ' +
     '.feature-film, .film-card, .cta-panel'
   ));
